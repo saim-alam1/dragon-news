@@ -12,6 +12,8 @@ const NewsCard = ({ news }) => {
     details,
   } = news;
 
+  // console.log(thumbnail_url);
+
   return (
     <div className="card bg-base-100 border-1 border-base-300 rounded-xl">
       <div className="flex items-center justify-between gap-3 p-4">

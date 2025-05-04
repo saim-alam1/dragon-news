@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet } from 'react-router';
+import { Outlet, useNavigation } from 'react-router';
 import Header from '../components/Header';
 import LatesNews from '../components/LatesNews';
 import Navbar from '../components/Navbar';
@@ -7,6 +7,8 @@ import LeftAside from '../components/homeLayout/LeftAside';
 import RightAside from '../components/homeLayout/RightAside';
 
 const HomeLayout = () => {
+  const { state } = useNavigation();
+  // console.log(state);
   return (
     <div>
       <header>
