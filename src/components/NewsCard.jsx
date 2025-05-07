@@ -1,8 +1,10 @@
 import { FaStar, FaEye, FaRegBookmark } from "react-icons/fa";
 import { IoShareSocialOutline } from "react-icons/io5";
+import { Link } from "react-router";
 
 const NewsCard = ({ news }) => {
   const {
+    id,
     title,
     author,
     thumbnail_url,
@@ -36,7 +38,7 @@ const NewsCard = ({ news }) => {
         </div>
       </div>
 
-      <h2 className="font-bold px-4 hover:underline">{title}</h2>
+      <h2 className="font-bold px-4 cursor-pointer hover:underline">{title}</h2>
 
       <figure className="px-4 pt-4">
         <img
@@ -52,9 +54,9 @@ const NewsCard = ({ news }) => {
             ? details.slice(0, 150) + "..."
             : details}
         </p>
-        <button className="text-orange-600 font-semibold hover:underline w-fit">
+        <Link to={`/news-details/${id}`} className="text-orange-600 font-semibold cursor-pointer hover:underline w-fit">
           Read More
-        </button>
+        </Link>
         <div className="card-actions justify-between items-center mt-2 text-sm text-gray-700">
           <div className="flex items-center gap-1 text-orange-500">
             <FaStar /> {rating.number}
